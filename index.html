@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meine Webseite</title>
+  <style>
+    /* Stile für den Header */
+    header {
+      background-color: #FBEF01;
+      padding: 20px;
+    }
+
+    .social-icons {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .social-icons a {
+      margin-left: 10px;
+      position: relative;
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .social-icons a i {
+      font-size: 20px;
+      margin-right: 5px;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-info img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .contact-info ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .contact-info li {
+      margin-right: 10px;
+    }
+
+    .navbar {
+      background-color: white;
+      padding: 10px;
+    }
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center; /* Hier wird die Ausrichtung auf das Zentrum festgelegt */
+    }
+
+    .navbar li {
+      margin-right: 10px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #696C71;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: xx-large;
+      text-align: center;
+    }
+
+    .navbar a:hover {
+      background-color: yellow;
+    }
+   
+.überschrift1 {
+  color: #696C71;
+  font-size: xxx-large;
+  text-align: center;
+  margin-top: 0;
+}
+
+    /* Stile für den Footer */
+    footer {
+      background-color: #FBEF01;
+      padding: 20px;
+      color: #696C71;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .footer-contact-info {
+      margin-bottom: 10px;
+    }
+
+    .footer-contact-info p {
+      margin-bottom: 5px;
+    }
+
+    .footer-nav-links {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .footer-nav-links li {
+      margin-right: 10px;
+    }
+
+    .footer-nav-links a {
+      color: #696C71;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-nav-links a:hover {
+      color: yellow;
+    }
+
+    .footer-social-icons a {
+      color: #696C71;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+
+    .footer-social-icons a:hover {
+      color: yellow;
+    }
+
+    .footer-legal-links {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    .footer-legal-links li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    .footer-legal-links a {
+      color: #696C71;
+      text-decoration: none;
+    }
+
+    .footer-legal-links a:hover {
+      color: yellow;
+    }
+
+    .footer-button {
+      display: inline-block;
+      background-color: white;
+      color: #696C71;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .footer-button:hover {
+      background-color: yellow;
+    }
+    .hiersindwir-container {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hiersindwir-banner {
+      background-color: #696C71;
+      color: #FBEF01;
+      padding: 10px;
+    }
+
+    .hiersindwir {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      margin-top: 20px;
+      color: #696C71;
+    }
+
+    .hiersindwir iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      color: #696C71;
+    }
+
+    .hiersindwir-text {
+      font-size: xx-large;
+    }
+    .contact-form {
+      background-color: #696C71;
+      color: #FBEF01;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-form input[type="submit"],
+    .contact-form input[type="reset"] {
+      background-color: #FBEF01;
+      color: #696C71;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contact-form input[type="submit"]:hover,
+    .contact-form input[type="reset"]:hover {
+      background-color: yellow;
+    }
+    .preise-container {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .preise-banner {
+      background-color: #696C71;
+      color: #FBEF01;
+      padding: 10px;
+    }
+
+    .preise-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      color: #696C71;
+    }
+
+    .preis-card {
+      background-color: #FBEF01;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .preis-card:hover {
+      background-color: yellow;
+    }
+
+    .preis-card h2 {
+      font-size: xx-large;
+    }
+     .gallery {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+      background-color: #696C71; /* Hintergrundfarbe */
+
+}
+
+    .image {
+      display: none;
+      width: auto;
+      height: 400px;
+      max-width: 100%;
+      transition: transform 0.3s ease-in-out;
+      border: 2px solid transparent;
+    }
+
+    .image:hover,
+    .arrow:hover {
+      transform: translateY(-10px);
+      border-color: #FBEF01;
+      border-width: 12px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: yellow;
+      font-size: 24px;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      border: 2px solid transparent;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+    .anmeldung-container {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .anmeldung-banner {
+      background-color: #696C71;
+      color: #FBEF01;
+      padding: 10px;
+    }
+
+    .anmeldung-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .anmeldung-form input[type="text"],
+    .anmeldung-form input[type="email"],
+    .anmeldung-form input[type="tel"],
+    .anmeldung-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #696C71;
+    }
+
+    .anmeldung-form input[type="submit"] {
+      background-color: #FBEF01;
+      color: #696C71;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .anmeldung-form input[type="submit"]:hover {
+      background-color: yellow;
+    }
+   
+/* ... restlicher Stilcode hier ... */
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header>
+  <b>
+    <div class="social-icons">
+      Email <a href="mailto:drivex51.wn@gmail.com">drivex51.wn@gmail.com</a>
+      <a href="https://www.facebook.com/X.Drive.WN/"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="contact-info">
+    <img src="https://scontent-muc2-1.xx.fbcdn.net/v/t1.18169-9/12219587_1633797776886722_5301004183822691111_n.jpg?stp=c80.0.206.206a_dst-jpg_p206x206&_nc_cat=102&cb=99be929b-59f725be&ccb=1-7&_nc_sid=da31f3&_nc_ohc=ff09qrPHC3MAX9RAoU7&_nc_ht=scontent-muc2-1.xx&oh=00_AfCw2aT6IbtiKt_H4RMVydhFADned-FMptsysKl1EEFtLA&oe=64C29DDD" alt="Fahrschule Drive X" style="width: 10%; height: auto;">
+
+      <div>
+        <h1 class="überschrift1"> BARBER Nik </h1> <br>
+        <p>Adresse: <a href="https://goo.gl/maps/VEBbenVK3Ae7B1ZJ6">Google Maps</a></p>
+        <div>
+         
+        </div>
+      </div>
+    </div>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="überuns.html">Über uns</a></li>
+      <li><a href="fahrlehrer.html">Friseure</a></li>
+      <li> <a href="preisedienstleistungen.html"> Preise/Dienstleistungen </a>  </li>
+      <li> <a href="kundenbewertungen.html"> Kundenbewertungen </a>  </li>
+      <li> <a href="Terminvereinbarung.html"> Terminvereinbarung </a>  </li>
+
+    </ul>
+  </div>
+</b>
+</header>
+<div class="gallery">
+    <img class="image" src="https://lh5.googleusercontent.com/p/AF1QipMj8BMJkrn9WU7dhWUOPQEh9-y4Em_mgUdmyN2q=w426-h240-k-no" alt="Bild 1">
+    <img class="image" src="https://scontent-muc2-1.xx.fbcdn.net/v/t39.30808-6/330364566_931880091160084_1698944086943900436_n.jpg?_nc_cat=108&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_ohc=scn3qkoHXpUAX87ldjr&_nc_ht=scontent-muc2-1.xx&oh=00_AfCyo-VorQKfpPy6Sg5SYf1k6XjMzrHeieTu-j5i_SQGQg&oe=64A1DD7B" alt="Bild 2">
+    <img class="image" src="https://scontent-muc2-1.xx.fbcdn.net/v/t1.18169-9/17991134_1845264659073365_4852100537177641756_n.jpg?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=nARhoVoKOvEAX9S8FzD&_nc_ht=scontent-muc2-1.xx&oh=00_AfCL3iNne8YhD0s22u9c-kuUoi0TKwmS5tH15W3XmsJbhQ&oe=64C3BD9A" alt="Bild 3">
+
+    <div class="arrow left" onclick="showImage(-1)">&#8249;</div>
+    <div class="arrow right" onclick="showImage(1)">&#8250;</div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const images = document.getElementsByClassName("image");
+
+    function showImage(n) {
+      currentIndex += n;
+
+      if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+      } else if (currentIndex >= images.length) {
+        currentIndex = 0;
+      }
+
+      for (let i = 0; i < images.length; i++) {
+        images[i].style.display = "none";
+      }
+
+      images[currentIndex].style.display = "block";
+    }
+
+    showImage(0); // Show the first image initially
+  </script>
+<div class="hiersindwir-container">
+    <div class="hiersindwir-banner">
+      <h1 class="hiersindwir-text">Hier sind Wir</h1>
+    </div>
+    <div class="hiersindwir">
+      <iframe src="https://www.google.de/maps/place/BARBER+Nik/@48.8338105,9.3133087,17z/data=!4m10!1m2!2m1!1sbarber!3m6!1s0x4799c8a59d6e1c8b:0xbd68e4b22beb87cf!8m2!3d48.8338105!4d9.3180723!15sCgZiYXJiZXJaCCIGYmFyYmVykgEKaGFpcl9zYWxvbpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSUGFrOXRaR1pCRUFF4AEA!16s%2Fg%2F11b6dm4dcs?entry=ttu" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+<div class="contact-form">
+    <h1>Kontaktformular</h1>
+
+    <form action="mailto:thehelpfulhub.com@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="message">Nachricht:</label><br>
+      <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+
+      <input type="submit" value="Nachricht senden">
+      <input type="reset" value="Zurücksetzen">
+    </form>
+  </div>
+    <div class="preise-container">
+    <div class="preise-banner">
+      <h1 class="hiersindwir-text">Preise</h1>
+    </div>
+    <div class="preise-list">
+      <div class="preis-card">
+        <h2>Grundpreis</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ipsum in dui vulputate, sed bibendum risus molestie.</p>
+      </div>
+      <div class="preis-card">
+        <h2>Aufbaukurs</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ipsum in dui vulputate, sed bibendum risus molestie.</p>
+      </div>
+      <div class="preis-card">
+        <h2>Sonderfahrten</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ipsum in dui vulputate, sed bibendum risus molestie.</p>
+      </div>
+      <!-- Weitere Preiskarten hier hinzufügen -->
+    </div>
+  </div>
+  <!-- ... vorheriger HTML-Code hier ... -->
+ <div class="anmeldung-container">
+    <div class="anmeldung-banner">
+      <h1>Online-Anmeldung</h1>
+    </div>
+
+    <form class="anmeldung-form" action="#" method="post">
+      <input type="text" name="vorname" placeholder="Vorname" required>
+      <input type="text" name="nachname" placeholder="Nachname" required>
+      <input type="email" name="email" placeholder="E-Mail-Adresse" required>
+      <input type="tel" name="telefon" placeholder="Telefonnummer" required>
+            <input type="text" name="alter" placeholder="Alter" required>
+      <select name="fahrzeugklasse" required>
+        <option value="" disabled selected>Wählen Sie die Fahrzeugklasse</option>
+        <option value="B">B (PKW)</option>
+        <option value="A">A (Motorrad)</option>
+        <option value="C">C (LKW)</option>
+      </select>
+      <input type="submit" value="Anmelden">
+    </form>
+  </div>
+
+<footer>
+  <div class="footer-contact-info">
+    <p>Telefonnummer: <a href="tel:+491734538590">01734538590</a></p>
+    <p>E-Mail: <a href="mailto:drivex51.wn@gmail.com">drivex51.wn@gmail.com</a></p>
+    <p>Öffnungszeiten: Mo-Fr, 9:00-18:00 Uhr</p>
+    <a href="#top" class="footer-button">Nach oben<i class="fas fa-arrow-up"></i></a>
+    <a href="kontakt.html" class="footer-button">Kontakt</a>
+    <a href="faq.html" class="footer-button">Fragen?</a>
+
+
+  </div>
+ 
+  <div class="footer-social-icons">
+    <a href="https://www.facebook.com/X.Drive.WN/"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+  
+  <ul class="footer-legal-links">
+    <li><a href="#">Datenschutz</a></li>
+    <li><a href="#">Impressum</a></li>
+  </ul>
+  <p>© 2023 Fahrschule Drive X. Alle Rechte vorbehalten.</p>
+</footer>
+</body>
+</html>
