@@ -376,6 +376,56 @@
     .anmeldung-form input[type="submit"]:hover {
       background-color: yellow;
     }
+    .friseure-gallery {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1080px;
+  margin: 10px auto;
+  background-color: #696C71;
+}
+
+.friseure-image {
+  display: none;
+  width: auto;
+  height: 400px;
+  max-width: 100%;
+  transition: transform 0.3s ease-in-out;
+  border: 20px solid transparent;
+}
+
+.friseure-image:hover,
+.friseure-arrow:hover {
+  transform: translateY(-10px);
+  border-color: #5700a3;
+  border-width: 12px;
+}
+
+.friseure-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #5700a3;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  border: 2px solid transparent;
+}
+
+.friseure-arrow.left {
+  left: 10px;
+}
+
+.friseure-arrow.right {
+  right: 10px;
+}
+
    
    
 /* ... restlicher Stilcode hier ... */
@@ -526,7 +576,42 @@
     <div class="hiersindwir-banner">
       <h1 class="hiersindwir-text">Friseure </h1>
     </div>
-    
+    <div class="friseure-gallery">
+  <div class="friseure-arrow left">&lt;</div>
+  <img class="friseure-image" src="https://scontent-muc2-1.xx.fbcdn.net/v/t1.6435-9/46507411_2171697546183461_6757545236781596672_n.jpg?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=KzyaXQTcInEAX9h3h94&_nc_ht=scontent-muc2-1.xx&oh=00_AfCRM1Gmw2hqmxABuXgdi_c1dTqKhmaGMzEukcwwI1ZGbg&oe=64CE3569" alt="Friseur 1">
+  <img class="friseure-image" src="https://scontent-muc2-1.xx.fbcdn.net/v/t1.6435-9/107596675_3370299172989953_3378837381845080372_n.jpg?_nc_cat=105&cb=99be929b-59f725be&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=N1CVJBwcfv0AX9Si0DQ&_nc_ht=scontent-muc2-1.xx&oh=00_AfA76NKGnDisxX7XE21XZg1NQVFoJrGaa9wkkIIt5H-uEw&oe=64CE5C7C" alt="Friseur 2">
+  <div class="friseure-arrow right">&gt;</div>
+</div>
+
+<script>
+const friseureImages = document.querySelectorAll('.friseure-image');
+const friseureLeftArrow = document.querySelector('.friseure-arrow.left');
+const friseureRightArrow = document.querySelector('.friseure-arrow.right');
+let friseureCurrentIndex = 0;
+
+function showFriseureImage(index) {
+  friseureImages.forEach((image) => {
+    image.style.display = 'none';
+  });
+  friseureImages[index].style.display = 'block';
+}
+
+function previousFriseureImage() {
+  friseureCurrentIndex = (friseureCurrentIndex - 1 + friseureImages.length) % friseureImages.length;
+  showFriseureImage(friseureCurrentIndex);
+}
+
+function nextFriseureImage() {
+  friseureCurrentIndex = (friseureCurrentIndex + 1) % friseureImages.length;
+  showFriseureImage(friseureCurrentIndex);
+}
+
+friseureLeftArrow.addEventListener('click', previousFriseureImage);
+friseureRightArrow.addEventListener('click', nextFriseureImage);
+
+showFriseureImage(friseureCurrentIndex);
+
+</script>
     <div class="hiersindwir-container">
     <div class="hiersindwir-banner">
       <h1 class="hiersindwir-text">Preis/Dienstleistung </h1>
